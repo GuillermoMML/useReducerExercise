@@ -22,11 +22,9 @@ La **lista** y el **filtro** deben gestionarse con **`useReducer`** (no `useStat
 
 ```
 src/
-  App.jsx      # starter con useState (deberás migrarlo)
+  App.jsx      
   main.jsx
 ```
-
-> El starter renderiza una To-Do con HTML/CSS inline. No hay dependencias externas.
 
 ---
 
@@ -52,18 +50,13 @@ Abre `http://localhost:5173` (o el puerto que te indique).
 
 ```js
 { type: "todo/add",       payload: { id, text } }
-{ type: "todo/toggle",    payload: id }
+{ type: "todo/toggle",    payload: id } //Se encargará de cambiar el done a false o true, es decir tarea terminada o no
 { type: "todo/remove",    payload: id }
 { type: "todo/clearDone" }                 // sin payload
 { type: "todo/setFilter", payload: "all" | "pending" | "done" }
 ```
 
 - Cambia los handlers para que hagan `dispatch({ type, payload })` en lugar de `setTodos` / `setFilter`.
-
-### 2) Reglas del reducer
-- **Puro**: sin `console.log` obligatorios, sin IO (no `localStorage`, no `fetch`).
-- **Inmutable**: no mutar arrays/objetos originales (usa `map`, `filter`, spread…).
-- **Idempotencia**: acciones desconocidas devuelven el estado actual.
 
 ### 3) Derivados (no cambian)
 
@@ -145,7 +138,7 @@ const visibleTodos =
       { id: 1, text: "Entender props y estado", done: true },
       { id: 2, text: "Practicar map/filter", done: false },
     ],
-    filter: "all",
+    filter: "all", // "all" "pending" "done" para filtrar por todos, pendiente o hecho
   };
   ```
 - **IDs**: genéralos **fuera** del reducer (p. ej., `Date.now()`) al hacer `dispatch` de `add`.
