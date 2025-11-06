@@ -1,0 +1,146 @@
+
+/* ====== Reset & base ====== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #111827;
+  background: #f6f7f9;
+}
+
+/* ====== Layout ====== */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: 520px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ====== Typography ====== */
+h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+/* ====== Inputs & Buttons ====== */
+.input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+}
+
+.input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.btn {
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover { background: #f9fafb; }
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border: 1px solid #2563eb;
+}
+
+.btn-primary:hover { background: #1e40af; border-color: #1e40af; }
+
+.btn-active {
+  background: #111827;
+  color: #fff;
+  border: 1px solid #111827;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #fff;
+  border: 1px solid #ef4444;
+}
+
+.btn-danger:hover { background: #b91c1c; border-color: #b91c1c; }
+
+/* ====== List ====== */
+.list {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.item-text.done {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+/* ====== Badges & separators ====== */
+.badge-success {
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.v-sep {
+  width: 1px;
+  height: 16px;
+  background: #e5e7eb;
+  margin: 0 8px;
+}
+
+/* ====== Helper utilities ====== */
+.ml-auto { margin-left: auto; }
+.mt-10 { margin-top: 10px; }
+.mb-3 { margin-bottom: 12px; }
+.center { text-align: center; color: #6b7280; padding: 16px; }
+
+/* ====== Responsive ====== */
+@media (max-width: 560px) {
+  .card { width: 100%; }
+}
